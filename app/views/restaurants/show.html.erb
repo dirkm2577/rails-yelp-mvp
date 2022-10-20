@@ -1,12 +1,15 @@
-<h1>Restaurant: <%= @restaurant.name %></h1>
+<div class="container">
+  <h1>Restaurant: <%= @restaurant.name %></h1>
 
+  <%= render @restaurant %>
+</div>
+<hr>
+
+<p><strong>Reviews</strong></p>
+<p><%= link_to "add review", new_restaurant_review_path(@restaurant) %></p>
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %>
-    <%= link_to "Delete",
-    review_path(review),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+    <li class="list-group-item"><%= review.content %> <p>Rating: <%= review.rating %></p>
     </li>
   <% end %>
 </ul>
