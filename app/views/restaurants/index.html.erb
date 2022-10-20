@@ -6,30 +6,9 @@
 <hr>
 
   <div id="restaurants">
-    <% @restaurants.each do |restaurant| %>
-      <p>
-        <strong>Name:</strong>
-        <%= restaurant.name %>
-      </p>
 
-      <p>
-        <strong>Address:</strong>
-        <%= restaurant.address %>
-      </p>
+    <%= render 'list', restaurant: @restaurant  %>
 
-      <p>
-        <strong>Phone Number:</strong>
-        <%= restaurant.phone_number %>
-      </p>
-
-      <p>
-        <strong>Category:</strong>
-        <%= restaurant.category %>
-      </p>
-      <p>
-        <%= link_to "Show this restaurant", restaurant %>
-      </p>
-    <% end %>
   </div>
 
 
